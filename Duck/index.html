@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+		<script src="https://rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+	</head>
+	<body>
+		<a-scene>
+			<a-assets>
+				<a-asset-item id="entli" src="nina.gltf"></a-asset-item>
+			</a-assets>
+
+			<a-sky
+				material="shader: gradient; topColor: 144 0 255; bottomColor: 186 108 209; offset: 100; exponent: 0.37"
+				geometry=""
+			></a-sky>
+
+			<a-gltf-model
+				src="#entli"
+				gltf-model="nina.gltf"
+				scale="30 30 30"
+				position=""
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; dur: 10000; loop: true; easing: linear"
+			></a-gltf-model>
+			<a-entity
+				id="maincamera"
+				camera=""
+				position="0 3.03151 12.22986"
+				data-aframe-inspector-original-camera=""
+			>
+			</a-entity>
+		</a-scene>
+	</body>
+</html>

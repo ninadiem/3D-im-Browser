@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+		<script src="https://rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+	</head>
+	<body>
+		<a-scene>
+			<a-assets>
+				<a-asset-item id="umbrella" src="Umbrella_01.gltf"></a-asset-item>
+			</a-assets>
+
+			<a-sky
+				material="shader: gradient; topColor: 165 225 173; bottomColor: 247 187 183; offset: 100; exponent: 0.37"
+				geometry=""
+			></a-sky>
+			<a-gltf-model
+				src="#umbrella"
+				gltf-model="Umbrella_01.gltf"
+				scale="0.5 0.5 0.5"
+				visible=""
+				position=""
+				rotation="83.47 360.15929 0"
+				animation="property: rotation; to: 0 1000 0; dur: 10000; loop: NaN; easing: linear"
+			></a-gltf-model>
+
+			<!-- Kamera und licht -->
+
+			<a-entity
+				id="maincamera"
+				camera=""
+				look-controls=""
+				position="-0.02349 4.09104 10.23611"
+				rotation="-20.053522829578817 0.8021409131831525 0"
+				data-aframe-inspector-original-camera=""
+				scale="0.86 1 1"
+			></a-entity>
+			<!-- lichter -->
+
+			<a-entity
+				light="color: #0062ff; groundColor: #ffa3f4; intensity: 1.47; shadowCameraBottom: -5.4"
+				position="1.33925 3.12752 4.21348"
+				rotation="145.9254749262791 34.749 21.860130000000005"
+			></a-entity>
+			<a-entity
+				light="color: #ff0a99; groundColor: #ffa3f4; intensity: 1.47; shadowCameraBottom: -5.4"
+				position="-2.84148 2.93807 5.96171"
+				rotation="145.9254749262791 34.749 21.860130000000005"
+			></a-entity>
+		</a-scene>
+	</body>
+</html>

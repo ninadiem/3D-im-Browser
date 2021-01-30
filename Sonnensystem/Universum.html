@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+		<script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+	</head>
+	<body>
+		<a-scene>
+			<a-assets>
+				<img id="skybox" src="assets/eso0932a.png" />
+				<img id="jupiter" src="assets/jup1vuu2.jpg" />
+				<img id="sun" src="assets/sun.jpg" />
+			</a-assets>
+			<!-- Skybox -->
+			<a-sky src="#skybox"></a-sky>
+
+			<!-- Elemente Sonnensystem -->
+			<a-entity id="sonnensystem">
+				<a-sphere
+					id="sonne"
+					rotation="0 0 0"
+					material="src: #sun; shader: flat"
+					animation="property: rotation; to: 0 360 0; dur: 10000; loop: true; easing: linear"
+				>
+					<a-entity
+						light="type: point; color: #ffe18f; angle: 23.48; intensity: 1.28; shadowRadius: -1.36"
+					></a-entity>
+					<a-cylinder
+						id="planet1"
+						position="0 0 -11.45"
+						material="color: #db5757"
+						geometry="height: 0.2; radius: 0.4"
+						rotation="0 33.68 -51.80"
+					></a-cylinder>
+					<a-sphere
+						id="planet2"
+						material="src: #jupiter"
+						geometry="radius: 0.3"
+						position="-6.39404 0 0"
+					>
+						<a-sphere
+							id="mond1-2"
+							geometry="radius: 0.1"
+							position="0.08541 0 1.47"
+						></a-sphere>
+						<a-sphere
+							id="mond2-2"
+							geometry="radius: 0.2"
+							position="-1.42367 0 0"
+						></a-sphere>
+					</a-sphere>
+					<a-sphere
+						id="planet3"
+						geometry="radius: 0.4"
+						position="0 0 13.10528"
+						material="shader: gradient; topColor: 255 0 0; bottomColor: 0 121 255; ffset: 1.0; exponent: 0.27"
+					></a-sphere>
+					<a-sphere
+						id="planet4"
+						material="color: #0e920c"
+						geometry="radius: 0.5"
+						position="13.62 0 8.51"
+					>
+						<a-sphere
+							id="mond1-4"
+							geometry="radius: 0.2"
+							position="-1.03 0 0"
+						></a-sphere>
+						<a-sphere
+							id="mond2-4"
+							material=""
+							geometry="radius: 0.05"
+							position="0 0 -1.19"
+						></a-sphere>
+					</a-sphere>
+				</a-sphere>
+			</a-entity>
+
+			<!-- Kamera -->
+			<a-entity id="mainCamera" camera position="0 17.8 0" rotation="-90 0 0">
+			</a-entity>
+
+			<!-- Lichter-->
+			<a-entity light="type: point; color: #CCC"></a-entity>
+		</a-scene>
+	</body>
+</html>
